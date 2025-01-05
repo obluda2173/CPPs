@@ -6,7 +6,7 @@
 /*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 20:50:59 by erian             #+#    #+#             */
-/*   Updated: 2025/01/05 21:04:55 by erian            ###   ########.fr       */
+/*   Updated: 2025/01/05 21:21:17 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ int	main(int ac, char **av)
 	{
 		for (int i = 1; i < ac; i++)
 		{
-			const char *word = av[i];
-			while (*word)
+			const char *str = av[i];
+			while (*str)
 			{
-				std::cout << static_cast<char>(std::toupper(*word));
-				++word;
+				std::cout << static_cast<char>(std::toupper(*str));
+				++str;
 			}
 		}
 		std::cout << std::endl;
