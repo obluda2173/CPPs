@@ -27,19 +27,19 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.cpp | $(OBJDIR)
 # link objects to create executable
 $(NAME): $(OBJ)
 	@$(CXX) $(CXXFLAGS) $^ -o $@
-	@echo "$(GREEN)Built successfully$(RESET)"
+	@echo "$(BLUE)built successfully$(RESET)"
 
 $(OBJDIR):
-	mkdir -p $(OBJDIR)
+	@mkdir -p $(OBJDIR)
 
 # clean object files
 clean:
-	@echo "$(BLUE)Cleaning objects$(RESET)"
+	@echo "$(RED)cleaning objects$(RESET)"
 	@rm -fr $(OBJDIR)
 
 # clean executable and object files
 fclean: clean
-	@echo "$(BLUE)Cleaning executable$(RESET)"
+	@echo "$(RED)cleaning executable$(RESET)"
 	@rm -f $(NAME)
 
 # rebuild

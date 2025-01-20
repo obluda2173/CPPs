@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Colors.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
+/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 17:33:49 by erian             #+#    #+#             */
-/*   Updated: 2025/01/06 17:54:55 by erian            ###   ########.fr       */
+/*   Updated: 2025/01/20 06:43:38 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 # define BLUE_B			"\e[48;5;39m"
 # define GREEN			"\033[1;32m"
 # define MAGENTA		"\033[1;35m"
-# define RESET			"\033[0m"
 # define BOLD			"\e[1m"
 # define ITALIC			"\e[3m"
 # define UNDERLINE		"\e[4m"
 # define STRIKETHROUGH	"\e[9m"
 # define RED			"\e[38;5;160m"
+# define NC				"\033[0m"

@@ -1,28 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/06 17:08:33 by erian             #+#    #+#             */
-/*   Updated: 2025/01/19 20:26:35 by erian            ###   ########.fr       */
+/*   Created: 2025/01/19 20:28:13 by erian             #+#    #+#             */
+/*   Updated: 2025/01/20 06:59:15 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Contact.hpp"
 
-#include <iostream>
-#include <string>
+Contact::Contact() {}
 
-class Contact {
-	public:
-		Contact();
-		~Contact();
-
-		std::string	first_name;
-		std::string	last_name;
-		std::string	nickname;
-		std::string	phone_number;
-		std::string	darkest_secret;
-};
+Contact::~Contact() {}
