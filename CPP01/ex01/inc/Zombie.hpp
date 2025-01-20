@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   _main.cpp                                          :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/20 11:25:04 by erian             #+#    #+#             */
-/*   Updated: 2025/01/20 11:58:47 by erian            ###   ########.fr       */
+/*   Created: 2025/01/20 11:24:44 by erian             #+#    #+#             */
+/*   Updated: 2025/01/20 12:05:02 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#pragma once
 
-int main() {
-	Zombie *zombie = NewZombie("Zakharchenko");
-	zombie->Announce();
-	zombie->Announce();
+#include <iostream>
+#include <string>
+#include <unistd.h>
+
+#include "Colors.hpp"
+
+class Zombie {
+	private:
+	std::string _name;
+
+	public:
+	Zombie();
+	Zombie(std::string name);
+	~Zombie();
 	
-	RandomChump("Wagner");
-	RandomChump("Onishchenko");
+	void Announce();
+};
 
-	delete(zombie);
-	return 0;
-}
+Zombie* ZombieHorde(int N, std::string name);

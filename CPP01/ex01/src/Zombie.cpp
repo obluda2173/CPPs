@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   _main.cpp                                          :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/20 11:25:04 by erian             #+#    #+#             */
-/*   Updated: 2025/01/20 11:58:47 by erian            ###   ########.fr       */
+/*   Created: 2025/01/20 12:13:03 by erian             #+#    #+#             */
+/*   Updated: 2025/01/20 12:13:51 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main() {
-	Zombie *zombie = NewZombie("Zakharchenko");
-	zombie->Announce();
-	zombie->Announce();
-	
-	RandomChump("Wagner");
-	RandomChump("Onishchenko");
+Zombie::Zombie() {}
 
-	delete(zombie);
-	return 0;
+Zombie::Zombie(std::string name) : _name(name) {}
+
+void Zombie::Announce() {
+	std::cout << DARKBLUE << _name << BLUE << ": BraiiiiiiinnnzzzZ...\n" << NC; 
+}
+
+Zombie::~Zombie() {
+	std::cout << RED << "Zombie: " << DARKBLUE << _name << RED << " die\n" << NC;
+	usleep(50000);
 }

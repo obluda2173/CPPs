@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   _main.cpp                                          :+:      :+:    :+:   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/20 11:25:04 by erian             #+#    #+#             */
-/*   Updated: 2025/01/20 11:58:47 by erian            ###   ########.fr       */
+/*   Created: 2025/01/20 12:08:31 by erian             #+#    #+#             */
+/*   Updated: 2025/01/20 12:12:45 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main() {
-	Zombie *zombie = NewZombie("Zakharchenko");
-	zombie->Announce();
-	zombie->Announce();
-	
-	RandomChump("Wagner");
-	RandomChump("Onishchenko");
+Zombie *ZombieHorde(int horde_size, std::string name) {
+	Zombie *zombies = new Zombie[horde_size];
 
-	delete(zombie);
-	return 0;
+	for (int i = 0; i < horde_size; i++)
+		zombies[i] = Zombie(name);
+	return zombies;
 }
