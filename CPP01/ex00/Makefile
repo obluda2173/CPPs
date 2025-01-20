@@ -1,13 +1,16 @@
 # program name
-NAME		=	megaphone
+NAME		=	zombi
 
 # compiler and flags
 CXX			=	@c++
 CXXFLAGS	=	-std=c++98 -Wall -Wextra -Werror -g
 
 # sources and objects
-SRC			=	$(wildcard *.cpp)
-OBJ			=	$(SRC:.cpp=.o)
+SRCDIR		=	src
+INCDIR		=	inc
+OBJDIR		=	obj
+SRC			=	$(wildcard $(SRCDIR)/*.cpp)
+OBJ			=	$(SRC:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 
 # colors for output
 RED			:=	\033[1;31m
@@ -18,19 +21,25 @@ RESET		:=	\033[0m
 # default target
 all: $(NAME)
 
+$(OBJDIR)/%.o: $(SRCDIR)/%.cpp | $(OBJDIR)
+	$(CXX) $(CXXFLAGS) -I$(INCDIR) -c $< -o $@
+
 # link objects to create executable
 $(NAME): $(OBJ)
 	@$(CXX) $(CXXFLAGS) $^ -o $@
-	@echo "$(GREEN)built successfully$(RESET)"
+	@echo "$(BLUE)built successfully$(RESET)"
+
+$(OBJDIR):
+	@mkdir -p $(OBJDIR)
 
 # clean object files
 clean:
-	@echo "$(BLUE)cleaning objects$(RESET)"
-	@rm -f $(OBJ)
+	@echo "$(RED)cleaning objects$(RESET)"
+	@rm -fr $(OBJDIR)
 
 # clean executable and object files
 fclean: clean
-	@echo "$(BLUE)cleaning executable$(RESET)"
+	@echo "$(RED)cleaning executable$(RESET)"
 	@rm -f $(NAME)
 
 # rebuild
