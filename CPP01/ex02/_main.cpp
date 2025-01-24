@@ -6,7 +6,7 @@
 /*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 12:47:27 by erian             #+#    #+#             */
-/*   Updated: 2025/01/20 12:59:59 by erian            ###   ########.fr       */
+/*   Updated: 2025/01/24 10:38:28 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 
 int main() {
-	std::string str = "HELLO THIS IS BRAIN";
+	std::string str = "HI THIS IS BRAIN";
 	std::string *strptr = &str;
 	std::string &strref = str;
 	

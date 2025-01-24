@@ -6,7 +6,7 @@
 /*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:28:09 by erian             #+#    #+#             */
-/*   Updated: 2025/01/20 11:12:34 by erian            ###   ########.fr       */
+/*   Updated: 2025/01/24 09:10:57 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void PhoneBook::Show(int index) {
 std::string PhoneBook::ShortStr(std::string str)
 {
 	if (str.length() > 10)
-		return str.substr(0, 7) + "...";
+		return str.substr(0, 9) + ".";
 	return str;
 }
 
