@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
+/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 17:08:33 by erian             #+#    #+#             */
-/*   Updated: 2025/01/19 20:26:35 by erian            ###   ########.fr       */
+/*   Updated: 2025/02/01 11:33:27 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
 #include <string>
+#include <iostream>
 
 class Contact {
 	public:
