@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/28 20:12:27 by erian             #+#    #+#             */
-/*   Updated: 2025/02/02 18:35:25 by erian            ###   ########.fr       */
+/*   Created: 2025/02/02 18:54:50 by erian             #+#    #+#             */
+/*   Updated: 2025/02/02 19:37:25 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#pragma once
 
-using std::cout;
-using std::endl;
+#include <ctime>
+#include <string>
+#include <unistd.h>
+#include <iostream>
+#include "Colors.hpp"
 
-HumanA::HumanA(const std::string name, Weapon &weapon) : _name(name), _weapon(weapon) {}
+class Harl {
 
-void HumanA::attack()
-{
-	cout << DARKBLUE << _name << BLUE << " attacks with their "
-			<< YELLOW << _weapon.getType() << NC << "\n";
-}
+	private:
+		std::string _debug_texts[3];
+		std::string _info_texts[3];
+		std::string _warning_texts[3];
+		std::string _error_texts[3];
+		
+		void debug();
+		void info();
+		void warning();
+		void error();
 
-void HumanA::setWeapon(Weapon weapon) { _weapon = weapon; }
+	public:
+		Harl();
+		~Harl();
 
-Weapon HumanA::getWeapon() { return _weapon; }
-
-HumanA::~HumanA() {}
+		void complain(std::string level);
+};

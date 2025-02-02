@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
+/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 20:12:30 by erian             #+#    #+#             */
-/*   Updated: 2025/02/02 16:46:13 by erian            ###   ########.fr       */
+/*   Updated: 2025/02/02 18:35:17 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void HumanB::attack()
 			<< YELLOW << _weapon->getType() << NC << "\n";
 	}
 	else
-		std::cout << DARKBLUE << _name << RED << " is not armed" << NC << "\n";
+		std::cout << DARKBLUE << _name << RED << " is not armed\n" << NC;
 }
 
 void HumanB::setWeapon(Weapon &weapon) { _weapon = &weapon; }

@@ -5,34 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/20 12:47:27 by erian             #+#    #+#             */
-/*   Updated: 2025/02/02 18:34:03 by erian            ###   ########.fr       */
+/*   Created: 2025/02/02 18:54:46 by erian             #+#    #+#             */
+/*   Updated: 2025/02/02 19:38:30 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
-
-#define BLUE	"\e[38;5;123m"
-#define NC      "\033[0m"
-
-using std::cout;
-using std::endl;
+#include "Harl.hpp"
 
 int main() {
-	std::string str = "HI THIS IS BRAIN";
-	std::string *strptr = &str;
-	std::string &strref = str;
-	
-	cout << "\nmemory:\n"
-	<< "original:  " << BLUE << &str << "\n" << NC
-	<< "pointer:   " << BLUE << &strptr << "\n" << NC
-	<< "reference: " << BLUE << &strref << "\n" << NC;
 
-	cout << "\nvalue:\n"
-	<< "original:  " << BLUE << str << "\n" << NC
-	<< "pointer:   " << BLUE << *strptr << "\n" << NC
-	<< "reference: " << BLUE << strref << "\n" << NC;
+	Harl harl;
+	std::string table_of_levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+
+	for (int i = 0; i < 10; i++) {
+		harl.complain(table_of_levels[std::rand() % 4]);
+	}
 
 	return 0;
+	
 }

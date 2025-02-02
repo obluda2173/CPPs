@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
+/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:28:09 by erian             #+#    #+#             */
-/*   Updated: 2025/02/01 11:57:15 by erian            ###   ########.fr       */
+/*   Updated: 2025/02/02 18:30:01 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,14 @@ void PhoneBook::Add() {
 }
 
 void PhoneBook::DisplayHeader() const {
-    cout << endl
-         << "____________________________________________" << endl
-         << "|" << MAGENTA << "  index   " << NC
-         << "|" << MAGENTA << " first name " << NC
-         << "|" << MAGENTA << " last name " << NC
-         << "|" << MAGENTA << " nickname " << NC
-         << "|" << endl;
+    cout << endl;
+    cout << "____________________________________________"
+        << endl
+        << "|" << MAGENTA << "  index   " << NC
+		<< "|" << MAGENTA << "first name" << NC
+		<< "|" << MAGENTA << "last  name" << NC
+		<< "|" << MAGENTA << " nickname " << NC
+        << "|" << endl;
 }
 
 void PhoneBook::Search() {
@@ -68,7 +69,7 @@ void PhoneBook::DisplayContactList() const {
              << "|" << endl;
         i++;
     }
-    cout << "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\n";
+    std::cout << "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\n";
 }
 
 int PhoneBook::GetContactIndex(const std::string &prompt) const {
