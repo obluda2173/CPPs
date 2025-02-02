@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
+/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 19:51:04 by erian             #+#    #+#             */
-/*   Updated: 2025/01/28 20:03:32 by erian            ###   ########.fr       */
+/*   Updated: 2025/02/02 15:27:34 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 class HumanA {
 	private:
-		std::string _name;
-		Weapon		&_weapon;
+		std::string	_name;
+		Weapon 		&_weapon;
 	public:
 		HumanA(const std::string name, Weapon &weapon);
 		~HumanA();

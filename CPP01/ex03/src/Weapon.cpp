@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
+/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 20:12:32 by erian             #+#    #+#             */
-/*   Updated: 2025/01/29 20:08:42 by erian            ###   ########.fr       */
+/*   Updated: 2025/02/02 15:28:15 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,8 @@
 
 Weapon::Weapon(const std::string type) : _type(type) {}
 
-const std::string Weapon::getType() { 
-	return (_type); 
-}
+const std::string Weapon::getType() { return (_type); }
 
-void Weapon::setType(const std::string type) { 
-	_type = type; 
-}
+void Weapon::setType(const std::string type) { _type = type; }
 
 Weapon::~Weapon() {}
