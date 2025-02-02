@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   RandomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
+/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 11:44:59 by erian             #+#    #+#             */
-/*   Updated: 2025/01/20 11:49:40 by erian            ###   ########.fr       */
+/*   Updated: 2025/02/01 12:27:27 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-void RandomChump( std::string name ) {
+void randomChump( std::string name ) {
 	Zombie zombie(name);
 	zombie.Announce();
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
+/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 11:24:44 by erian             #+#    #+#             */
-/*   Updated: 2025/01/20 12:05:02 by erian            ###   ########.fr       */
+/*   Updated: 2025/02/01 12:30:09 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@
 
 class Zombie {
 	private:
-	std::string _name;
+		std::string _name;
 
 	public:
-	Zombie();
-	Zombie(std::string name);
-	~Zombie();
-	
-	void Announce();
+		Zombie();
+		Zombie(std::string name);
+		~Zombie();
+		
+		void Announce();
 };
 
 Zombie* ZombieHorde(int N, std::string name);
