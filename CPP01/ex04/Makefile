@@ -1,5 +1,5 @@
 # program name
-NAME		=	weapons
+NAME		=	sed
 
 # compiler and flags
 CXX			=	@c++
