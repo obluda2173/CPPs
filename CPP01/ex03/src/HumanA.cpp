@@ -3,28 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
+/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 20:12:27 by erian             #+#    #+#             */
-/*   Updated: 2025/02/02 18:35:25 by erian            ###   ########.fr       */
+/*   Updated: 2025/02/18 13:55:39 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-using std::cout;
-using std::endl;
-
-HumanA::HumanA(const std::string name, Weapon &weapon) : _name(name), _weapon(weapon) {}
+HumanA::HumanA( const std::string name, Weapon &weapon ) : _name(name), _weapon(weapon) {}
 
 void HumanA::attack()
 {
-	cout << DARKBLUE << _name << BLUE << " attacks with their "
-			<< YELLOW << _weapon.getType() << NC << "\n";
+	std::cout
+	<< DARK_BLUE << _name << NC << " attacks with their "
+	<< DARK_ORANGE << _weapon.getType() << NC << std::endl;
 }
-
-void HumanA::setWeapon(Weapon weapon) { _weapon = weapon; }
-
-Weapon HumanA::getWeapon() { return _weapon; }
 
 HumanA::~HumanA() {}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
+/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 18:54:50 by erian             #+#    #+#             */
-/*   Updated: 2025/02/02 19:37:25 by erian            ###   ########.fr       */
+/*   Updated: 2025/02/18 16:20:17 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 #include <ctime>
 #include <string>
 #include <unistd.h>
+#include <cstdlib>
 #include <iostream>
+
 #include "Colors.hpp"
 
-class Harl {
+enum Level { DEBUG, INFO, WARNING, ERROR, UNKNOWN };
 
+class Harl {
 	private:
-		std::string _debug_texts[3];
-		std::string _info_texts[3];
-		std::string _warning_texts[3];
-		std::string _error_texts[3];
+		std::string _texts[4][3];
 		
 		void debug();
 		void info();
@@ -33,7 +33,10 @@ class Harl {
 
 	public:
 		Harl();
-		~Harl();
 
-		void complain(std::string level);
+		void complain( std::string level );
+
+		~Harl();
 };
+
+Level get_level(const std::string& level_str);

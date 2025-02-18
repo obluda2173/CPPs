@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
+/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 19:51:02 by erian             #+#    #+#             */
-/*   Updated: 2025/01/28 20:04:50 by erian            ###   ########.fr       */
+/*   Updated: 2025/02/18 13:57:07 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,18 @@
 
 #include <iostream>
 #include "Weapon.hpp"
-#include "Colors.hpp"
 
 class HumanB {
 	private:
-		std::string	_name;
-		Weapon		*_weapon;
-	public:
-		HumanB(const std::string name);
-		~HumanB();
+		std::string _name;
+		Weapon *_weapon;
 
-		void	attack();
-		void	setWeapon(Weapon &weapon);
-		Weapon	getWeapon();
+	public:
+		HumanB( const std::string name );
+		HumanB( const std::string name, Weapon &weapon );
+
+		void attack();
+		void setWeapon( Weapon &weapon );
+
+		~HumanB();
 };

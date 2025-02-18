@@ -35,7 +35,7 @@ $(OBJDIR):
 # clean object files
 clean:
 	@echo "$(RED)cleaning objects$(RESET)"
-	@rm -fr $(OBJDIR)
+	@rm -fr $(OBJDIR) && rm -fr *replace
 
 # clean executable and object files
 fclean: clean
@@ -46,3 +46,4 @@ fclean: clean
 re: fclean all
 
 # declare targets as not files
+.PHONY: all clean fclean re

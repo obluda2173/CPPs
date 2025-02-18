@@ -46,3 +46,4 @@ fclean: clean
 re: fclean all
 
 # declare targets as not files
+.PHONY: all clean fclean re

@@ -1,5 +1,5 @@
 # program name
-NAME		=	zombi_horde
+NAME		=	moar
 
 # compiler and flags
 CXX			=	@c++

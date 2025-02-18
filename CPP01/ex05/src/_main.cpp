@@ -3,24 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   _main.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
+/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 18:54:46 by erian             #+#    #+#             */
-/*   Updated: 2025/02/02 19:38:30 by erian            ###   ########.fr       */
+/*   Updated: 2025/02/18 16:20:39 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
 int main() {
-
 	Harl harl;
-	std::string table_of_levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
-	for (int i = 0; i < 10; i++) {
-		harl.complain(table_of_levels[std::rand() % 4]);
-	}
+	for (int i = 0; i < 3; i++)
+		harl.complain(levels[std::rand() % 4]);
 
 	return 0;
-	
 }

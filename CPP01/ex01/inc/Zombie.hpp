@@ -6,14 +6,14 @@
 /*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 11:24:44 by erian             #+#    #+#             */
-/*   Updated: 2025/02/01 12:30:09 by erian            ###   ########.fr       */
+/*   Updated: 2025/02/18 11:49:38 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
 #include <string>
+#include <iostream>
 #include <unistd.h>
 
 #include "Colors.hpp"
@@ -26,8 +26,8 @@ class Zombie {
 		Zombie();
 		Zombie(std::string name);
 		~Zombie();
-		
+
 		void Announce();
 };
 
-Zombie* ZombieHorde(int N, std::string name);
+Zombie* zombieHorde(int N, std::string name);

@@ -3,53 +3,47 @@
 /*                                                        :::      ::::::::   */
 /*   Sed.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
+/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 18:37:15 by erian             #+#    #+#             */
-/*   Updated: 2025/02/02 18:40:23 by erian            ###   ########.fr       */
+/*   Updated: 2025/02/18 15:04:51 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sed.hpp"
 
-using std::cerr;
-using std::endl;
-
 Sed::Sed() {}
 
-void Sed::replace(std::string file, std::string to_replace, std::string replace) {
+void Sed::replace( std::string file, std::string to_replace, std::string replacement ) {
+    std::ifstream input(file.c_str());
+    if (!input.is_open()) {
+        std::cerr << ERROR << "Error: could not open file '" << file << "'" << NC << std::endl;
+        return;
+    }
 
-	std::ifstream input(file.c_str());
-	std::string buffer;
-	size_t pos;
+    std::string buffer((std::istreambuf_iterator<char>(input)), std::istreambuf_iterator<char>());
+    input.close();
 
-	if (!input.is_open()) {
-		cerr << ERROR << " could not open a file :( " << NC << endl;
-		input.close();
-		return;
-	}
+    std::string result;
+    size_t start = 0;
+    size_t pos;
 
-	getline(input, buffer, '\0');
+    while ((pos = buffer.find(to_replace, start)) != std::string::npos) {
+        result.append(buffer, start, pos - start);
+        result += replacement;
+        start = pos + to_replace.length();
+    }
+    result.append(buffer, start, std::string::npos);
 
-	if (buffer.empty()) {
-		cerr << ERROR << " file is empty :( " << NC << endl;
-		input.close();
-		return;
-	}
+    std::string outputFile = file + ".replace";
+    std::ofstream output(outputFile.c_str());
+    if (!output.is_open()) {
+        std::cerr << ERROR << "Error: could not create output file '" << outputFile << "'" << NC << std::endl;
+        return;
+    }
 
-	pos = buffer.find(to_replace);
-
-	while (pos != std::string::npos) {
-		buffer.erase(pos, to_replace.length());
-		buffer.insert(pos, replace);
-		pos = buffer.find(to_replace, pos + replace.length());
-	}
-
-	std::ofstream output((file + ".replace").c_str());
-	output << buffer;
-
-	output.close();
-	input.close();
+    output << result;
+    output.close();
 }
 
 Sed::~Sed() {}

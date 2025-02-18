@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   _main.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
+/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 20:05:13 by erian             #+#    #+#             */
-/*   Updated: 2025/02/02 20:11:21 by erian            ###   ########.fr       */
+/*   Updated: 2025/02/04 17:54:11 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ using std::endl;
 int main() {
 	
 	Fixed a;
-	a.setRawBits(10);
 	Fixed b(a);
 	Fixed c;
 	
 	c = b;
+
 	cout << a.getRawBits() << endl;
 	cout << b.getRawBits() << endl;
 	cout << c.getRawBits() << endl;

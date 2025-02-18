@@ -1,5 +1,5 @@
 # program name
-NAME		=	weapons
+NAME		=	violance
 
 # compiler and flags
 CXX			=	@c++

@@ -6,19 +6,19 @@
 /*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 11:25:04 by erian             #+#    #+#             */
-/*   Updated: 2025/02/01 12:29:20 by erian            ###   ########.fr       */
+/*   Updated: 2025/02/18 11:02:25 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
 int main() {
-	Zombie *zombie = newZombie("Zakharchenko");
+	Zombie *zombie = newZombie("Onishchenko");
 	zombie->Announce();
 	
-	randomChump("Wagner");
-	randomChump("Onishchenko");
-
 	delete(zombie);
+
+	randomChump("Wagner");
+
 	return 0;
 }

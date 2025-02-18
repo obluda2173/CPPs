@@ -6,14 +6,14 @@
 /*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 11:24:44 by erian             #+#    #+#             */
-/*   Updated: 2025/02/01 12:28:13 by erian            ###   ########.fr       */
+/*   Updated: 2025/02/18 11:14:05 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
 #include <string>
+#include <iostream>
 
 #include "Colors.hpp"
 
@@ -29,5 +29,5 @@ class Zombie {
 		void Announce();
 };
 
-Zombie *newZombie(std::string name);
 void randomChump(std::string name);
+Zombie *newZombie(std::string name);

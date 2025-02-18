@@ -1,5 +1,5 @@
 # program name
-NAME		=	zombi
+NAME		=	zombie
 
 # compiler and flags
 CXX			=	@c++
