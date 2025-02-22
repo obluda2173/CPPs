@@ -9,7 +9,9 @@ CXXFLAGS	=	-std=c++98 -Wall -Wextra -Werror -g
 SRCDIR		=	src
 INCDIR		=	inc
 OBJDIR		=	obj
-SRC			=	$(wildcard $(SRCDIR)/*.cpp)
+SRC			=	src/_main.cpp \
+				src/ClapTrap.cpp \
+				src/ScavTrap.cpp
 OBJ			=	$(SRC:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 
 # colors for output

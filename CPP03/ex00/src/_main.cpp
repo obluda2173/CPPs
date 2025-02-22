@@ -6,7 +6,7 @@
 /*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 09:22:39 by erian             #+#    #+#             */
-/*   Updated: 2025/02/21 10:06:30 by erian            ###   ########.fr       */
+/*   Updated: 2025/02/22 10:51:11 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main() {
 	ClapTrap claptrap_01("claptrap_01");
 	ClapTrap claptrap_02("claptrap_02");
-	
+
 	claptrap_01.attack("claptrap_02");
 	claptrap_02.takeDamage(0);
 	claptrap_02.beRepaired(0);

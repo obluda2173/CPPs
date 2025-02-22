@@ -6,7 +6,7 @@
 /*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 09:22:39 by erian             #+#    #+#             */
-/*   Updated: 2025/02/21 12:36:30 by erian            ###   ########.fr       */
+/*   Updated: 2025/02/22 11:26:28 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,13 @@
 #include "FragTrap.hpp"
 
 int main() {
-	FragTrap trap("fragtrap_00");
+	FragTrap fragtrap("fragtrap_00");
+	ClapTrap claptrap("claptrap_00");
 
-	trap.highFivesGuys();
+	fragtrap.attack("claptrap_00");
+	claptrap.takeDamage(30);
+	claptrap.beRepaired(30);
+	fragtrap.highFivesGuys();
 
 	return 0;
 }
