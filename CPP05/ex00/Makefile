@@ -9,7 +9,7 @@ CXXFLAGS	=	-std=c++98 -Wall -Wextra -Werror -g
 SRCDIR		=	src
 INCDIR		=	inc
 OBJDIR		=	obj
-SRC			=	src/main.cpp \
+SRC			=	src/_main.cpp \
 				src/Bureaucrat.cpp
 OBJ			=	$(SRC:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 
