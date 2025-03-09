@@ -6,7 +6,7 @@
 /*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 13:24:44 by erian             #+#    #+#             */
-/*   Updated: 2025/03/09 14:38:59 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/09 15:17:13 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ std::string const &Bureaucrat::getName() const {
 	return _name;
 }
 
-int Bureaucrat::getGrade() const {
+unsigned int Bureaucrat::getGrade() const {
 	return _grade;
 }
 
