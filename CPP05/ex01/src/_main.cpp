@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   _main.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
+/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 13:24:03 by erian             #+#    #+#             */
-/*   Updated: 2025/03/09 17:29:39 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/09 21:01:03 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "unistd.h"
 #include <ctime>
 #include <cstdlib>
 
+#include "unistd.h"
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
@@ -21,14 +21,16 @@
 
 int main() {
 	std::srand(std::time(0));
-	Bureaucrat *eu_maggots[MAGGOTS_COUNT];
+	Bureaucrat *eu_directive_maggots[MAGGOTS_COUNT];
 	Form *eu_bottle_cap_proposal_form[MAGGOTS_COUNT];
 	unsigned int count = 0;
 
+	std::cout << GREEN << "the new bottle cap design voting began!\n" << NC;
+
 	for (int i = 0; i < MAGGOTS_COUNT; i++) {
 		try {
-			eu_maggots[i] = new Bureaucrat("random maggot", rand() % 100 + 1);
-			std::cout << DARK_BLUE << *eu_maggots[i] << NC << "\n";
+			eu_directive_maggots[i] = new Bureaucrat("random maggot", rand() % 120 + 1);
+			std::cout << DARK_BLUE << *eu_directive_maggots[i] << NC << "\n";
 		} catch (std::exception &e) {
 			std::cout << e.what() << std::endl;
 		}
@@ -43,7 +45,7 @@ int main() {
 
 	for (int i = 0; i < MAGGOTS_COUNT; i++) {
 		try {
-			eu_maggots[i]->signForm(*eu_bottle_cap_proposal_form[i]);
+			eu_directive_maggots[i]->signForm(*eu_bottle_cap_proposal_form[i]);
 			if (eu_bottle_cap_proposal_form[i]->isSigned())
 				count++;
 		} catch (std::exception &e) {
@@ -52,15 +54,15 @@ int main() {
 		usleep(100000);
 	}
 	
-	std::cout << static_cast<unsigned>((static_cast<double>(count) / MAGGOTS_COUNT) * 100) << "% of the maggots voted for bottle cups proposal" << std::endl;
+	std::cout << GREEN << static_cast<unsigned>((static_cast<double>(count) / MAGGOTS_COUNT) * 100) << "% of the EU Directive maggots voted for redesigning bottle cups\n" << NC;
 
 	if (count > MAGGOTS_COUNT / 2)
-		std::cout << GREEN << "congratulations, now you suffer from bottle cups!!!" << NC << std::endl;
+		std::cout << GREEN << "congratulations, now you suffer from bottle cups!" << NC << std::endl;
 	else
-		std::cout << RED << "you are safe from bottle cup, for now..." << NC << std::endl;
+		std::cout << RED << "EU directive decided to repeat the voting, please run the program again." << NC << std::endl;
 
 	for (int i = 0; i < MAGGOTS_COUNT; i++) {
-		delete eu_maggots[i];
+		delete eu_directive_maggots[i];
 		delete eu_bottle_cap_proposal_form[i];
 	}
 
