@@ -6,7 +6,7 @@
 /*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 12:59:46 by erian             #+#    #+#             */
-/*   Updated: 2025/03/17 15:48:56 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/17 17:29:54 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,9 @@ std::string RobotomyRequestForm::getTarget() const {
 
 void RobotomyRequestForm::action() const {
 	srand(time(0));
+	std::cout << VIOLET << "*drip dril*\n" << NC;
 	if (rand() % 2)
 		std::cout << BLUE << _target << " has been robotomized successfully\n" << NC;
 	else
-		std::cout << ORANGE << _target << " has failed\n" << NC;
+		std::cout << ORANGE << _target << " has failed to robotomize\n" << NC;
 }

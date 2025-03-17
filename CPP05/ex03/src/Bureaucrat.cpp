@@ -6,7 +6,7 @@
 /*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 13:24:44 by erian             #+#    #+#             */
-/*   Updated: 2025/03/17 16:03:48 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/17 17:27:16 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void Bureaucrat::signForm(AForm &form) {
 		form.beSigned(*this);
 		std::cout << GREEN << _name << " signs " << form.getName() << NC << std::endl;
 	} catch (std::exception &e) {
-		std::cout << RED << _name << " cannot sign " << form.getName() << " because " << e.what() << NC << std::endl;
+		std::cout << ERROR << _name << " cannot sign " << form.getName() << " form because " << e.what() << NC << std::endl;
 	}
 }
 
@@ -67,9 +67,9 @@ void Bureaucrat::executeForm(AForm const &form) {
 		form.execute(*this);
 		std::cout << GREEN << _name << " executed " << form.getName() << "\n" << NC;
 	} catch (const AForm::GradeTooLowException& e) {
-		std::cerr << ERROR << _name << " can not sign " << form.getName() << " because " << e.what() << "\n" << NC;
+		std::cerr << ERROR << _name << " can not sign " << form.getName() << " form because " << e.what() << "\n" << NC;
 	} catch (const AForm::FormSignedException& e) {
-		std::cerr << ERROR << _name << " can not sign " << form.getName() << " because " << e.what() << "\n" << NC;
+		std::cerr << ERROR << _name << " can not sign " << form.getName() << " form because " << e.what() << "\n" << NC;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 12:59:46 by erian             #+#    #+#             */
-/*   Updated: 2025/03/17 15:48:42 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/17 17:25:09 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 PresidentialPardonForm::PresidentialPardonForm() : AForm("Presidential Pardon", 25, 5) {}
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("Presidential ardon", 25, 5), _target(target) {}
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("Presidential Pardon", 25, 5), _target(target) {}
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &other) : 
 AForm(other.getName(), other.getSignGrade(), other.getExecGrade()), _target(other.getTarget()) {}
