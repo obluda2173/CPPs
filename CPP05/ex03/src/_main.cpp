@@ -6,7 +6,7 @@
 /*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 13:24:03 by erian             #+#    #+#             */
-/*   Updated: 2025/03/17 17:22:53 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/17 17:33:28 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,3 @@ int main() {
 	
 	return 0;
 }
-
-/*
- * what to test:
- * sign and execute shrubbery
- * sign and execute robotomy
- * sign and execute president
- * create a pleb who can not sign or execute anything
- */
