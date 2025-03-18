@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/17 12:21:21 by erian             #+#    #+#             */
-/*   Updated: 2025/03/18 12:18:55 by erian            ###   ########.fr       */
+/*   Created: 2025/03/17 12:21:25 by erian             #+#    #+#             */
+/*   Updated: 2025/03/17 16:07:04 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <string>
+#include <time.h>
+#include <cstdlib>
+#include <fstream>
 
 #include "_Colors.hpp"
 #include "AForm.hpp"
 
-class PresidentialPardonForm : public AForm {
+class RobotomyRequestForm : public AForm {
 	private:
 		// attributes
 		std::string _target;
 
 	public:
 		// OCN
-		PresidentialPardonForm();
-		PresidentialPardonForm(std::string target);
-		PresidentialPardonForm(const PresidentialPardonForm &other);
-		PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
-		~PresidentialPardonForm();
+		RobotomyRequestForm();
+		RobotomyRequestForm(std::string target);
+		RobotomyRequestForm(const RobotomyRequestForm &other);
+		RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
+		~RobotomyRequestForm();
 
 		// geters n setters
 		std::string getTarget() const;

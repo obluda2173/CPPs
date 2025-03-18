@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/17 12:21:21 by erian             #+#    #+#             */
-/*   Updated: 2025/03/18 12:18:55 by erian            ###   ########.fr       */
+/*   Created: 2025/03/18 12:02:36 by erian             #+#    #+#             */
+/*   Updated: 2025/03/18 12:19:13 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <string>
+#include <iostream>
 
 #include "_Colors.hpp"
 #include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
-class PresidentialPardonForm : public AForm {
-	private:
-		// attributes
-		std::string _target;
-
+class Intern {
 	public:
 		// OCN
-		PresidentialPardonForm();
-		PresidentialPardonForm(std::string target);
-		PresidentialPardonForm(const PresidentialPardonForm &other);
-		PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
-		~PresidentialPardonForm();
-
-		// geters n setters
-		std::string getTarget() const;
-
+		Intern();
+		Intern(const Intern &other);
+		Intern &operator=(const Intern &other);
+		~Intern();
+	
 		// methods
-		void action() const;
+		AForm *makeForm(std::string formName, std::string formTarget);
 };

@@ -1,5 +1,5 @@
 # program name
-NAME		=	ex03
+NAME		=	ex02
 
 # compiler and flags
 CXX			=	@c++
@@ -14,8 +14,7 @@ SRC			=	src/_main.cpp \
 				src/AForm.cpp \
 				src/PresidentialPardonForm.cpp \
 				src/RobotomyRequestForm.cpp \
-				src/ShrubberyCreationForm.cpp \
-				src/Intern.cpp
+				src/ShrubberyCreationForm.cpp
 OBJ			=	$(SRC:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 
 # colors for output
