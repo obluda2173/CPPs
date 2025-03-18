@@ -6,7 +6,7 @@
 /*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 13:24:03 by erian             #+#    #+#             */
-/*   Updated: 2025/03/17 17:33:28 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/18 11:55:42 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
 int main() {
 	Bureaucrat Erik("Mr. Erik An", 1);
-	Bureaucrat pleb("some pleb", 150);
-	PresidentialPardonForm presidental_form("some pleb");
-	RobotomyRequestForm robotomy_form("some pleb");
+	Bureaucrat pleb("Pisciner", 150);
+	PresidentialPardonForm presidental_form("Pisciner");
+	RobotomyRequestForm robotomy_form("Pisciner");
 	ShrubberyCreationForm shrubbery_form("somewhere_in_spain");
 
 	pleb.signForm(presidental_form);
@@ -37,6 +37,6 @@ int main() {
 	Erik.signForm(shrubbery_form);
 	pleb.executeForm(shrubbery_form);
 	Erik.executeForm(shrubbery_form);
-	
+
 	return 0;
 }
