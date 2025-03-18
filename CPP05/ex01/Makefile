@@ -3,7 +3,7 @@ NAME		=	ex01
 
 # compiler and flags
 CXX			=	@c++
-CXXFLAGS	=	-std=c++98 -Wall -Wextra -Werror -g
+CXXFLAGS	=	-std=c++98 -Wall -Wextra -Werror
 
 # sources and objects
 SRCDIR		=	src

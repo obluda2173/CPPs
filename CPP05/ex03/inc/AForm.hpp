@@ -50,21 +50,15 @@ class AForm {
 		// exceptions
 		class GradeTooHighException : public std::exception {
 			public:
-				virtual const char *what() const throw() {
-					return "form grade is too high";
-				};
+				virtual const char *what() const throw();
 		};
 		class GradeTooLowException : public std::exception {
 			public:
-				virtual const char *what() const throw() {
-					return "form grade is too low";
-				};
+				virtual const char *what() const throw();
 		};
 		class FormSignedException : public std::exception {
 			public:
-				virtual const char *what() const throw() {
-					return "form is already signed";
-				};
+				virtual const char *what() const throw();
 		};
 };
 

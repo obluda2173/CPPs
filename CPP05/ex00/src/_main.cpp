@@ -6,7 +6,7 @@
 /*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 13:24:03 by erian             #+#    #+#             */
-/*   Updated: 2025/03/09 15:00:38 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/18 14:40:16 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,18 @@ int main() {
 		Bureaucrat b3("b3", 150);
 		Bureaucrat b4("b4", 2);
 		Bureaucrat b5("b5", 149);
+
+		try {
+			Bureaucrat b6("b6", 0);
+		} catch(std::exception &e) {
+			std::cout << ERROR << e.what() << NC << "\n";
+		}
+
+		try {
+			Bureaucrat b7("b7", 151);
+		} catch(std::exception &e) {
+			std::cout << ERROR << e.what() << NC << "\n";
+		}
 
 		std::cout << DARK_RED << b1 << NC << GREEN << " will be incremented"  "\n";
 		std::cout << DARK_ORANGE << b2 << NC << RED << " will be decremented"  "\n";

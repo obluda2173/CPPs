@@ -6,7 +6,7 @@
 /*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 13:24:44 by erian             #+#    #+#             */
-/*   Updated: 2025/03/17 17:27:16 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/18 14:07:30 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,14 @@ void Bureaucrat::executeForm(AForm const &form) {
 	} catch (const AForm::FormSignedException& e) {
 		std::cerr << ERROR << _name << " can not sign " << form.getName() << " form because " << e.what() << "\n" << NC;
 	}
+}
+
+const char *Bureaucrat::GradeTooHighException::what() const throw() {
+	return "form grade is too high";
+}
+
+const char *Bureaucrat::GradeTooLowException::what() const throw() {
+	return "form grade is too low";
 }
 
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &bureaucrat) {

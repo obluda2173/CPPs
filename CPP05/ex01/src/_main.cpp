@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   _main.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
+/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 13:24:03 by erian             #+#    #+#             */
-/*   Updated: 2025/03/09 21:01:03 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/18 14:47:55 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int main() {
 	for (int i = 0; i < MAGGOTS_COUNT; i++) {
 		try {
 			eu_directive_maggots[i]->signForm(*eu_bottle_cap_proposal_form[i]);
+			std::cout << *eu_bottle_cap_proposal_form[i] << "\n";
 			if (eu_bottle_cap_proposal_form[i]->isSigned())
 				count++;
 		} catch (std::exception &e) {
