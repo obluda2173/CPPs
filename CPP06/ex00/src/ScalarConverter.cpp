@@ -6,7 +6,7 @@
 /*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 17:26:28 by erian             #+#    #+#             */
-/*   Updated: 2025/03/20 09:25:44 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/20 09:40:51 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ void ScalarConverter::convert(const std::string& input) {
 	double d = 0.0;
 
 	if (isPseudoLiteral(input)) {
-		std::cout << "char: impossible\n";
-		std::cout << "int: impossible\n";
-		std::cout << "float: " << input << (input[input.length() - 1] == 'f' ? "" : "f") << "\n";
-		std::cout << "double: " << input.substr(0, input.length() - (input[input.length() - 1] == 'f' ? 1 : 0)) << "\n";
+		std::cout << ERROR << "char: impossible\n" << NC;
+		std::cout << ERROR << "int: impossible\n" << NC;
+		std::cout << YELLOW << "float: " << input << (input[input.length() - 1] == 'f' ? "" : "f") << "\n" << NC;
+		std::cout << GREEN << "double: " << input.substr(0, input.length() - (input[input.length() - 1] == 'f' ? 1 : 0)) << "\n" << NC;
 		return;
 	}
 
@@ -75,23 +75,23 @@ void ScalarConverter::convert(const std::string& input) {
 		}
 
 		if (std::isprint(c)) 
-			std::cout << "char: '" << c << "'\n";
+			std::cout << RED << "char: '" << c << "'\n" << NC;
 		else 
-			std::cout << "char: Non displayable\n";
+			std::cout << RED << "char: Non displayable\n" << NC;
 		
-		std::cout << "int: " << i << "\n";
+		std::cout << ORANGE << "int: " << i << "\n" << NC;
 		if (f - (float)i == 0) {
-			std::cout << "float: " << f << ".0f\n";
-			std::cout << "double: " << d << ".0\n";
+			std::cout << YELLOW << "float: " << f << ".0f\n" << NC;
+			std::cout << GREEN << "double: " << d << ".0\n" << NC;
 		} 
 		else {
-			std::cout << "float: " << f << "f\n";
-			std::cout << "double: " << d << "\n";
+			std::cout << YELLOW << "float: " << f << "f\n" << NC;
+			std::cout << GREEN << "double: " << d << "\n" << NC;
 		}
 	} catch(const std::exception& e) {
-		std::cout << "char: impossible\n";
-		std::cout << "int: impossible\n";
-		std::cout << "float: impossible\n";
-		std::cout << "double: impossible\n";
+		std::cout << ERROR << "char: impossible\n" << NC;
+		std::cout << ERROR << "int: impossible\n" << NC;
+		std::cout << ERROR << "float: impossible\n" << NC;
+		std::cout << ERROR << "double: impossible\n" << NC;
 	}
 }
