@@ -6,7 +6,7 @@
 /*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 17:26:28 by erian             #+#    #+#             */
-/*   Updated: 2025/03/20 09:40:51 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/20 11:16:02 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void ScalarConverter::convert(const std::string& input) {
 	float f = 0.0f;
 	double d = 0.0;
 
+	bool charValid = true, intValid = true, floatValid = true, doubleValid = true;
+
 	if (isPseudoLiteral(input)) {
 		std::cout << ERROR << "char: impossible\n" << NC;
 		std::cout << ERROR << "int: impossible\n" << NC;
@@ -47,22 +49,34 @@ void ScalarConverter::convert(const std::string& input) {
 
 	try {
 		if (isInt(input)) {
-			i = std::strtol(input.c_str(), NULL, 10);
-			f = static_cast<float>(i);
+			long temp = std::strtol(input.c_str(), NULL, 10);
+			if (temp < std::numeric_limits<int>::min() || temp > std::numeric_limits<int>::max()) 
+				throw std::out_of_range("Integer overflow");
+			i = static_cast<int>(temp);
 			d = static_cast<double>(i);
-			c = static_cast<char>(i);
+			f = static_cast<float>(i);
 		}
 		else if (isFLoat(input)) {
-			f = static_cast<float>(std::atof(input.c_str()));
-			i = static_cast<int>(f);
+			double temp = std::atof(input.c_str());
+			if (temp < std::numeric_limits<float>::min() || temp > std::numeric_limits<float>::max()) 
+				throw std::out_of_range("Float overflow");
+			f = static_cast<float>(temp);
 			d = static_cast<double>(f);
-			c = static_cast<char>(i);
+			if (f >= std::numeric_limits<int>::min() && f <= std::numeric_limits<int>::max())
+				i = static_cast<int>(f);
+			else
+				intValid = false;
 		}
 		else if (isDouble(input)) {
 			d = std::strtod(input.c_str(), NULL);
-			i = static_cast<int>(d);
-			f = static_cast<float>(d);
-			c = static_cast<char>(i);
+			if (d >= std::numeric_limits<int>::min() && d <= std::numeric_limits<int>::max())
+				i = static_cast<int>(d);
+			else
+				intValid = false;
+			if (d >= std::numeric_limits<float>::min() && d <= std::numeric_limits<float>::max())
+				f = static_cast<float>(d);
+			else
+				floatValid = false;
 		}
 		else if (input.length() == 3 && input[0] == '\'' && input[2] == '\'') {
 			c = input[1];
@@ -73,25 +87,37 @@ void ScalarConverter::convert(const std::string& input) {
 		else {
 			throw std::invalid_argument("Invalid input");
 		}
-
-		if (std::isprint(c)) 
-			std::cout << RED << "char: '" << c << "'\n" << NC;
-		else 
-			std::cout << RED << "char: Non displayable\n" << NC;
-		
-		std::cout << ORANGE << "int: " << i << "\n" << NC;
-		if (f - (float)i == 0) {
-			std::cout << YELLOW << "float: " << f << ".0f\n" << NC;
-			std::cout << GREEN << "double: " << d << ".0\n" << NC;
-		} 
-		else {
-			std::cout << YELLOW << "float: " << f << "f\n" << NC;
-			std::cout << GREEN << "double: " << d << "\n" << NC;
-		}
-	} catch(const std::exception& e) {
-		std::cout << ERROR << "char: impossible\n" << NC;
-		std::cout << ERROR << "int: impossible\n" << NC;
-		std::cout << ERROR << "float: impossible\n" << NC;
-		std::cout << ERROR << "double: impossible\n" << NC;
 	}
+	catch (...) {
+		intValid = false;
+		floatValid = false;
+		doubleValid = false;
+	}
+
+	if (i >= std::numeric_limits<char>::min() && i <= std::numeric_limits<char>::max())
+			c = static_cast<char>(i);
+		else
+			charValid = false;
+
+	if (charValid && std::isprint(c))
+		std::cout << RED << "char: '" << c << "'\n" << NC;
+	else if (charValid)
+		std::cout << RED << "char: Non displayable\n" << NC;
+	else
+		std::cout << ERROR << "char: impossible\n" << NC;
+
+	if (intValid)
+		std::cout << ORANGE << "int: " << i << "\n" << NC;
+	else
+		std::cout << ERROR << "int: impossible\n" << NC;
+
+	if (floatValid)
+		std::cout << YELLOW << "float: " << f << "f\n" << NC;
+	else
+		std::cout << ERROR << "float: impossible\n" << NC;
+
+	if (doubleValid) 
+		std::cout << GREEN << "double: " << d << "\n" << NC;
+	else
+		std::cout << ERROR << "double: impossible\n" << NC;
 }
