@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
+/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 17:21:42 by erian             #+#    #+#             */
-/*   Updated: 2025/03/19 17:25:47 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/20 09:22:22 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
+#include <cmath>
+#include <limits>
 #include <string>
 #include <cstdlib>
-#include <limits>
-#include <cmath>
+#include <iostream>
 
 #include "_Colors.hpp"
 

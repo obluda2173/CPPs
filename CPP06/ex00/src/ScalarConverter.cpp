@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
+/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 17:26:28 by erian             #+#    #+#             */
-/*   Updated: 2025/03/19 18:43:36 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/20 09:25:44 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void ScalarConverter::convert(const std::string& input) {
 	if (isPseudoLiteral(input)) {
 		std::cout << "char: impossible\n";
 		std::cout << "int: impossible\n";
-		std::cout << "float: " << input << (input.back() == 'f' ? "" : "f") << "\n";
+		std::cout << "float: " << input << (input[input.length() - 1] == 'f' ? "" : "f") << "\n";
 		std::cout << "double: " << input.substr(0, input.length() - (input[input.length() - 1] == 'f' ? 1 : 0)) << "\n";
 		return;
 	}
