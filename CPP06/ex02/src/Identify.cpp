@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Identify.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
+/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 19:39:17 by erian             #+#    #+#             */
-/*   Updated: 2025/03/19 19:51:35 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/20 11:49:46 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Base* generate() {
 	int r = rand() % 3;
 
 	if (r == 0)
-        return new A();
+		return new A();
 	else if (r == 1)
 		return new B();
 	else
@@ -36,23 +36,20 @@ void identify(Base* p) {
 }
 
 void identify(Base& p) {
-	try {
-		(void)dynamic_cast<A&>(p);
-		std::cout << "A" << std::endl;
-		return;
-	} catch (std::bad_cast&) {}
+    try {
+        if (dynamic_cast<A*>(&p)) {
+            std::cout << "A" << std::endl;
+            return;
+        }
+        if (dynamic_cast<B*>(&p)) {
+            std::cout << "B" << std::endl;
+            return;
+        }
+        if (dynamic_cast<C*>(&p)) {
+            std::cout << "C" << std::endl;
+            return;
+        }
+    } catch (...) {}
 
-	try {
-		(void)dynamic_cast<B&>(p);
-		std::cout << "B" << std::endl;
-		return;
-	} catch (std::bad_cast&) {}
-
-	try {
-		(void)dynamic_cast<C&>(p);
-		std::cout << "C" << std::endl;
-		return;
-	} catch (std::bad_cast&) {}
-
-	std::cout << "Unknown type" << std::endl;
+    std::cout << "Unknown type" << std::endl;
 }
