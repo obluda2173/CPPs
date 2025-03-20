@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   _main.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
+/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 13:24:03 by erian             #+#    #+#             */
-/*   Updated: 2025/03/19 19:48:54 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/20 11:57:57 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ int main() {
 
 	std::cout << "Identifying by reference: ";
 	identify(*obj);
+
+	// std::cout << "Identifying NULL: ";
+	// identify(NULL);
 
 	delete obj;
 	return 0;
