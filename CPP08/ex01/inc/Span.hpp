@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
+/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 10:40:38 by erian             #+#    #+#             */
-/*   Updated: 2025/03/22 13:49:14 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/22 18:10:11 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #include <algorithm>
 #include <exception>
 
-#include <_Colors.hpp>
+#include "_Colors.hpp"
 
 class Span {
 	private:
@@ -45,11 +45,4 @@ class Span {
 		}
 		int shortestSpan() const;
 		int longestSpan() const;
-
-		unsigned int getMaxSize() {
-			return (*this)._maxSize;
-		}
-		std::vector<int> getNumbers() {
-			return (*this)._numbers;
-		}
 };

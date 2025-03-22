@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
+/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 18:20:09 by erian             #+#    #+#             */
-/*   Updated: 2025/03/22 10:35:41 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/22 17:44:51 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class NotFoundException : public std::exception {
 	public:
 		const char* what() const throw();
 };
-
 
 template <typename T>
 typename T::iterator easyfind(T& container, int value) {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
+/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 10:40:35 by erian             #+#    #+#             */
-/*   Updated: 2025/03/22 12:45:45 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/22 18:22:46 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int Span::shortestSpan() const {
 	std::sort(sorted.begin(), sorted.end());
 
 	int minSpan = sorted[1] - sorted[0];
-	for (size_t i = 1; i < sorted.size(); ++i) {
+	for (size_t i = 1; i < sorted.size(); i++) {
 		int span = sorted[i] - sorted[i - 1];
 		if (span < minSpan)
 			minSpan = span;

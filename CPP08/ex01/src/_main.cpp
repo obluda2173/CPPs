@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   _main.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
+/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 13:24:03 by erian             #+#    #+#             */
-/*   Updated: 2025/03/22 14:18:27 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/22 18:22:37 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void testEdgeCases() {
 		sp.addNumber(2);
 		sp.addNumber(3);
 		std::cout << INDIGO << "Trying to add another number to a full Span..." << NC << std::endl;
-		sp.addNumber(4);  // Should throw an exception
+		sp.addNumber(4);
 	} catch (const std::exception& e) {
 		std::cerr << "Caught Exception: " << ERROR << e.what() << NC << std::endl;
 	}
@@ -64,7 +64,7 @@ void testBulkInsertion() {
 	Span sp(10);
 	std::vector<int> numbers;
 
-	for (int i = 1; i <= 7; ++i) {
+	for (int i = 1; i <= 7; i++) {
 		numbers.push_back(i * 10);
 	}
 
@@ -78,7 +78,7 @@ void testLargeDataset() {
 	std::cout << "\n=== Test 4: Large Dataset ===" << std::endl;
 
 	Span sp(10000);
-	for (int i = 0; i < 10000; ++i) {
+	for (int i = 0; i < 10000; i++) {
 		sp.addNumber(i * 3);
 	}
 
