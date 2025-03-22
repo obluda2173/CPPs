@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   _main.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
+/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 13:53:26 by erian             #+#    #+#             */
-/*   Updated: 2025/03/22 14:49:40 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/22 19:13:11 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void testMutantStack() {
 	mstack.push(0);
 
 	std::cout << "Iterating through MutantStack:" << std::endl;
-	for (MutantStack<int>::iterator it = mstack.begin(); it != mstack.end(); ++it)
+	for (MutantStack<int>::iterator it = mstack.begin(); it != mstack.end(); it++)
 		std::cout << *it << std::endl;
 }
 
@@ -50,7 +50,7 @@ void testListComparison() {
 	lst.push_back(0);
 
 	std::cout << "Iterating through std::list:" << std::endl;
-	for (std::list<int>::iterator it = lst.begin(); it != lst.end(); ++it)
+	for (std::list<int>::iterator it = lst.begin(); it != lst.end(); it++)
 		std::cout << *it << std::endl;
 }
 
