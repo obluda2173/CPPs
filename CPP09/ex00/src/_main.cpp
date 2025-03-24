@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   _main.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
+/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 13:24:03 by erian             #+#    #+#             */
-/*   Updated: 2025/03/23 17:38:15 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/24 12:29:27 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,3 @@ int main(int argc, char** argv) {
 	btc.processInputFile(argv[1]);
 	return 0;
 }
-
-/*
- * add bad input case
- * fix some error with the "closest price" date
- */

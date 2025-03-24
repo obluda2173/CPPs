@@ -6,7 +6,7 @@
 /*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 12:59:30 by erian             #+#    #+#             */
-/*   Updated: 2025/03/24 10:39:30 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/24 12:29:23 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ bool BitcoinExchange::loadExchangeRates(const std::string& filename) {
 	}
 	std::string line, date;
 	double rate;
+	std::getline(file, line);
 	while (std::getline(file, line)) {
 		std::istringstream ss(line);
 		if (std::getline(ss, date, ',') && (ss >> rate)) {
