@@ -6,17 +6,17 @@
 /*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 19:01:40 by erian             #+#    #+#             */
-/*   Updated: 2025/03/24 19:07:54 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/24 19:36:36 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
 
-bool RPN::isOperator(const std::string &token) {
+bool isOperator(const std::string &token) {
 	return token == "+" || token == "-" || token == "*" || token == "/";
 }
 
-int RPN::performOperation(const std::string &op, int a, int b) {
+int performOperation(const std::string &op, int a, int b) {
 	if (op == "+") return a + b;
 	if (op == "-") return a - b;
 	if (op == "*") return a * b;
@@ -28,7 +28,7 @@ int RPN::performOperation(const std::string &op, int a, int b) {
 	throw std::runtime_error("Error: Invalid operator");
 }
 
-int RPN::evaluate(const std::string &expression) {
+int evaluate(const std::string &expression) {
 	std::stack<int> stack;
 	std::istringstream tokens(expression);
 	std::string token;

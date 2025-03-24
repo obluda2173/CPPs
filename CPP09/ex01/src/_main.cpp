@@ -6,7 +6,7 @@
 /*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 13:24:03 by erian             #+#    #+#             */
-/*   Updated: 2025/03/24 19:08:33 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/24 19:37:12 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(int ac, char **av) {
     }
 
     try {
-        int result = RPN::evaluate(av[1]);
+        int result = evaluate(av[1]);
         std::cout << BLUE << result << NC << std::endl;
     } catch (const std::exception &e) {
         std::cerr << ERROR << e.what() << NC << std::endl;
