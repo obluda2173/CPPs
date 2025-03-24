@@ -1,5 +1,5 @@
 # program name
-NAME		=	ex01
+NAME		=	RPN
 
 # compiler and flags
 CXX			=	@c++
@@ -10,7 +10,7 @@ SRCDIR		=	src
 INCDIR		=	inc
 OBJDIR		=	obj
 SRC			=	src/_main.cpp \
-				src/Span.cpp
+				src/RPN.cpp
 OBJ			=	$(SRC:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 
 # colors for output
