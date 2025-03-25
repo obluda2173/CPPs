@@ -6,7 +6,7 @@
 /*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 11:40:01 by erian             #+#    #+#             */
-/*   Updated: 2025/03/25 14:59:11 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/25 15:55:42 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 PmergeMe::PmergeMe() {}
 
-PmergeMe::PmergeMe(const PmergeMe &other) {
+PmergeMe::PmergeMe(const PmergeMe& other) {
 	*this = other;
 }
 
-PmergeMe &PmergeMe::operator=(const PmergeMe &other) {
-	(void)other; return *this;
+PmergeMe& PmergeMe::operator=(const PmergeMe& other) {
+	(void)other;
+	return *this;
 }
 
 PmergeMe::~PmergeMe() {}
