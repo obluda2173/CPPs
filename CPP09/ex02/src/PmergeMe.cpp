@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
+/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 11:40:01 by erian             #+#    #+#             */
-/*   Updated: 2025/03/25 15:55:42 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/25 19:29:11 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
+
+int PmergeMe::nbr_of_comps = 0;
 
 PmergeMe::PmergeMe() {}
 
@@ -25,83 +27,7 @@ PmergeMe& PmergeMe::operator=(const PmergeMe& other) {
 
 PmergeMe::~PmergeMe() {}
 
-void PmergeMe::mergeInsertionSort(std::vector<int>& vec) {
-	if (vec.size() < 2)
-		return;
-
-	size_t mid = vec.size() / 2;
-	std::vector<int> left(vec.begin(), vec.begin() + mid);
-	std::vector<int> right(vec.begin() + mid, vec.end());
-
-	mergeInsertionSort(left);
-	mergeInsertionSort(right);
-
-	std::vector<int>::iterator l = left.begin();
-	std::vector<int>::iterator r = right.begin();
-	std::vector<int>::iterator v = vec.begin();
-
-	while (l != left.end() && r != right.end()) {
-		if (*l < *r) {
-			*v = *l;
-			++l;
-		} else {
-			*v = *r;
-			++r;
-		}
-		++v;
-	}
-
-	while (l != left.end()) {
-		*v = *l;
-		++l;
-		++v;
-	}
-
-	while (r != right.end()) {
-		*v = *r;
-		++r;
-		++v;
-	}
-}
-
-void PmergeMe::mergeInsertionSort(std::deque<int>& deq) {
-	if (deq.size() < 2)
-		return;
-
-	size_t mid = deq.size() / 2;
-	std::deque<int> left(deq.begin(), deq.begin() + mid);
-	std::deque<int> right(deq.begin() + mid, deq.end());
-
-	mergeInsertionSort(left);
-	mergeInsertionSort(right);
-
-	std::deque<int>::iterator l = left.begin();
-	std::deque<int>::iterator r = right.begin();
-	std::deque<int>::iterator v = deq.begin();
-
-	while (l != left.end() && r != right.end()) {
-		if (*l < *r) {
-			*v = *l;
-			++l;
-		} else {
-			*v = *r;
-			++r;
-		}
-		++v;
-	}
-
-	while (l != left.end()) {
-		*v = *l;
-		++l;
-		++v;
-	}
-
-	while (r != right.end()) {
-		*v = *r;
-		++r;
-		++v;
-	}
-}
+long _jacobsthal_number(long n) { return round((pow(2, n + 1) + pow(-1, n)) / 3); }
 
 void PmergeMe::printSequence(const std::string& msg, const std::vector<int>& vec) {
 	std::cout << BLUE << msg << INDIGO;
@@ -124,14 +50,16 @@ void PmergeMe::sortAndMeasure(std::vector<int>& vec, std::deque<int>& deq) {
 	printSequence("Before: ", vec);
 
 	// vector
+	PmergeMe::nbr_of_comps = 0;
 	long startVec = getMicroseconds();
-	mergeInsertionSort(vecCopy);
+	mergeInsertionSort<std::vector<int> >(vecCopy, 1);
 	long endVec = getMicroseconds();
 	long vecDuration = endVec - startVec;
 
 	// deque
+	PmergeMe::nbr_of_comps = 0;
 	long startDeq = getMicroseconds();
-	mergeInsertionSort(deqCopy);
+	mergeInsertionSort<std::deque<int> >(deqCopy, 1);
 	long endDeq = getMicroseconds();
 	long deqDuration = endDeq - startDeq;
 
