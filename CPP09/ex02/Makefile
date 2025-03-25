@@ -1,5 +1,5 @@
 # program name
-NAME		=	ex02
+NAME		=	PmergeMe
 
 # compiler and flags
 CXX			=	@c++
@@ -9,7 +9,8 @@ CXXFLAGS	=	-std=c++98 -Wall -Wextra -Werror
 SRCDIR		=	src
 INCDIR		=	inc
 OBJDIR		=	obj
-SRC			=	src/_main.cpp
+SRC			=	src/_main.cpp \
+				src/Pmergeme.cpp
 OBJ			=	$(SRC:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 
 # colors for output
