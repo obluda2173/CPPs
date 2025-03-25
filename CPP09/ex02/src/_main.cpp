@@ -6,7 +6,7 @@
 /*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 13:53:26 by erian             #+#    #+#             */
-/*   Updated: 2025/03/25 14:36:25 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/25 17:19:50 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,9 @@ DONE
 
 comments: 
 какой-то прям супер уебанский sorting algorithm, просто пиздец, как и нахуя его блять придумали
+
+inspiration:
+https://github.com/emuminov/cpp_modules/blob/main/cpp09/ex02/PmergeMe.hpp
 
 */
 
