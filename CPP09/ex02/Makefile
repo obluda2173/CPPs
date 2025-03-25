@@ -10,7 +10,7 @@ SRCDIR		=	src
 INCDIR		=	inc
 OBJDIR		=	obj
 SRC			=	src/_main.cpp \
-				src/Pmergeme.cpp
+				src/PmergeMe.cpp
 OBJ			=	$(SRC:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 
 # colors for output

@@ -6,7 +6,7 @@
 /*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 13:53:26 by erian             #+#    #+#             */
-/*   Updated: 2025/03/25 13:54:36 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/25 14:36:25 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,11 +78,11 @@ int main(int ac, char **av) {
 	std::deque<int> deq;
 
 	for (int i = 1; i < ac; i++) {
-		if (!isValidNumber(av[i]) || std::stoi(av[i]) < 0) {
+		if (!isValidNumber(av[i]) || std::strtol(av[i], NULL, 10) < 0) {
 			std::cerr << ERROR << "Error: Invalid input '" << av[i] << "'" << NC << std::endl;
 			return 1;
 		}
-		int num = std::stoi(av[i]);
+		int num = static_cast<int>(std::strtol(av[i], NULL, 10));
 		vec.push_back(num);
 		deq.push_back(num);
 	}
