@@ -110,4 +110,5 @@ The 42 CPP Modules are a set of progressively challenging projects designed to t
 - Understanding how STL containers work internally
 - Optimizing memory management
 
-> GL peers
+## Peronal advice
+> GL peers ;)
