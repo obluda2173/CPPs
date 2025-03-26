@@ -6,7 +6,7 @@
 /*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 11:39:43 by erian             #+#    #+#             */
-/*   Updated: 2025/03/26 12:59:25 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/26 13:11:00 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,27 +69,27 @@ template <typename T>
 void PmergeMe::mergeInsertionSort(T& container, int pairLevel) {
 	typedef typename T::iterator Iterator;
 
-	int pair_units_nbr = container.size() / pairLevel;
-	if (pair_units_nbr < 2)
+	int pairUnitsNumber = container.size() / pairLevel;
+	if (pairUnitsNumber < 2)
 		return;
 
-	bool is_odd = pair_units_nbr % 2 == 1;
+	bool is_odd = pairUnitsNumber % 2 == 1;
 
 	Iterator start = container.begin();
 	Iterator last = start;
-	std::advance(last, pairLevel * pair_units_nbr);
+	std::advance(last, pairLevel * pairUnitsNumber);
 	Iterator end = last;
 	if (is_odd) std::advance(end, -pairLevel);
 
 	int jump = 2 * pairLevel;
 	for (Iterator it = start; it != end; std::advance(it, jump)) {
-		Iterator this_pair = it;
-		std::advance(this_pair, pairLevel - 1);
-		Iterator next_pair = it;
-		std::advance(next_pair, pairLevel * 2 - 1);
+		Iterator thisPair = it;
+		std::advance(thisPair, pairLevel - 1);
+		Iterator nextPair = it;
+		std::advance(nextPair, pairLevel * 2 - 1);
 
-		if (compare(next_pair, this_pair))
-			swapPair(this_pair, pairLevel);
+		if (compare(nextPair, thisPair))
+			swapPair(thisPair, pairLevel);
 	}
 
 	mergeInsertionSort(container, pairLevel * 2);
@@ -103,20 +103,20 @@ void PmergeMe::mergeInsertionSort(T& container, int pairLevel) {
 	main.push_back(container.begin());
 	std::advance(main.back(), pairLevel * 2 - 1);
 
-	for (int i = 4; i <= pair_units_nbr; i += 2) {
+	for (int i = 4; i <= pairUnitsNumber; i += 2) {
 		Iterator pend_it = container.begin();
 		std::advance(pend_it, pairLevel * (i - 1) - 1);
 		pend.push_back(pend_it);
 
-		Iterator main_it = container.begin();
-		std::advance(main_it, pairLevel * i - 1);
-		main.push_back(main_it);
+		Iterator mainIt = container.begin();
+		std::advance(mainIt, pairLevel * i - 1);
+		main.push_back(mainIt);
 	}
 
 	if (is_odd) {
-		Iterator odd_it = end;
-		std::advance(odd_it, pairLevel - 1);
-		pend.push_back(odd_it);
+		Iterator oddIt = end;
+		std::advance(oddIt, pairLevel - 1);
+		pend.push_back(oddIt);
 	}
 
 	int prevJacobsthal = jacobsthalNumber(1);
