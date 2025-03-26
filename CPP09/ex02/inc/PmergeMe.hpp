@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erian <erian@student.42>                   +#+  +:+       +#+        */
+/*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 11:39:43 by erian             #+#    #+#             */
-/*   Updated: 2025/03/25 19:38:21 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/26 10:01:02 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@
 #include <cstdlib>
 #include <sstream>
 #include <iostream>
+#include <algorithm>
 #include <sys/time.h> 
+#include <cmath>
 
 #include "_Colors.hpp"
 
@@ -26,7 +28,6 @@ class PmergeMe {
 	private:
 		template <typename T> void mergeInsertionSort(T& container, int pair_level);
 		template <typename T> void _swap_pair(T it, int pair_level);
-
 
 	public:
 		PmergeMe();
