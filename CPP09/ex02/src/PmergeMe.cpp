@@ -6,7 +6,7 @@
 /*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 11:40:01 by erian             #+#    #+#             */
-/*   Updated: 2025/03/26 12:58:21 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/26 14:33:30 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,6 @@ PmergeMe& PmergeMe::operator=(const PmergeMe& other) {
 }
 
 PmergeMe::~PmergeMe() {}
-
-long jacobsthalNumber(long n) {
-	return round((pow(2, n + 1) + pow(-1, n)) / 3);
-}
 
 void PmergeMe::printSequence(const std::string& msg, const std::vector<int>& vec) {
 	std::cout << BLUE << msg << INDIGO;

@@ -6,7 +6,7 @@
 /*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 11:39:43 by erian             #+#    #+#             */
-/*   Updated: 2025/03/26 14:30:57 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/26 14:36:43 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,6 @@ class PmergeMe {
 		void sortAndMeasure(std::vector<int>& vec, std::deque<int>& deq);
 		static void printSequence(const std::string& msg, const std::vector<int>& vec);
 };
-
-long jacobsthalNumber(long n);
 
 template <typename T>
 bool compare(T lv, T rv) {
@@ -79,7 +77,8 @@ void PmergeMe::mergeInsertionSort(T& container, int pairLevel) {
     Iterator last = start;
     std::advance(last, pairLevel * pairUnitsNumber);
     Iterator end = last;
-    if (isOdd) std::advance(end, -pairLevel);
+    if (isOdd)
+		std::advance(end, -pairLevel);
 
     int jump = 2 * pairLevel;
     for (Iterator it = start; it != end; std::advance(it, jump)) {
