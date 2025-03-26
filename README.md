@@ -16,6 +16,7 @@ The 42 CPP Modules are a set of progressively challenging projects designed to t
 - The Orthodox Canonical Form (OCCF)
 - new and delete operators
 - Private, public, and protected access modifiers
+
 🔧 **Key Skills:**
 - Understanding class instantiation and object-oriented design
 - Managing dynamic memory allocation
@@ -26,6 +27,7 @@ The 42 CPP Modules are a set of progressively challenging projects designed to t
 - References and pointers
 - File streams (ifstream, ofstream)
 - String manipulation
+
 🔧 **Key Skills:**
 - Managing heap-allocated objects correctly
 - Understanding pointer behavior
