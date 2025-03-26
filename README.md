@@ -5,7 +5,7 @@ The 42 CPP Modules are a set of progressively challenging projects designed to t
 
 ## General Guidelines
 - C++ Standard: Most modules require C++98, ensuring a strong foundation in older standards before modern features are introduced.
-- No External Libraries: Only standard C++ libraries (<iostream>, <algorithm>, etc.) are allowed.
+- No External Libraries: Only standard C++ libraries (iostream, algorithm, etc.) are allowed.
 - Memory Management: Proper handling of memory allocation and deallocation is crucial.
 - Forbidden Elements: using namespace std;, system() calls, and certain standard functions in specific modules are disallowed.
 
@@ -109,3 +109,5 @@ The 42 CPP Modules are a set of progressively challenging projects designed to t
 🔧 **Key Skills:**
 - Understanding how STL containers work internally
 - Optimizing memory management
+
+> GL peers
