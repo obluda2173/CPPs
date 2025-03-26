@@ -6,13 +6,13 @@
 /*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 11:40:01 by erian             #+#    #+#             */
-/*   Updated: 2025/03/26 10:11:12 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/26 12:58:21 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
-int PmergeMe::nbr_of_comps = 0;
+int PmergeMe::comparisonNumber = 0;
 
 PmergeMe::PmergeMe() {}
 
@@ -27,7 +27,7 @@ PmergeMe& PmergeMe::operator=(const PmergeMe& other) {
 
 PmergeMe::~PmergeMe() {}
 
-long _jacobsthal_number(long n) {
+long jacobsthalNumber(long n) {
 	return round((pow(2, n + 1) + pow(-1, n)) / 3);
 }
 
@@ -46,14 +46,14 @@ void PmergeMe::sortAndMeasure(std::vector<int>& vec, std::deque<int>& deq) {
 	printSequence("Before: ", vec);
 
 	//vector
-	PmergeMe::nbr_of_comps = 0;
+	PmergeMe::comparisonNumber = 0;
 	clock_t startVec = clock();
 	mergeInsertionSort<std::vector<int> >(vecCopy, 1);
 	clock_t endVec = clock();
 	double vecDuration = static_cast<double>(endVec - startVec) / CLOCKS_PER_SEC;
 
 	// deque
-	PmergeMe::nbr_of_comps = 0;
+	PmergeMe::comparisonNumber = 0;
 	clock_t startDeq = clock();
 	mergeInsertionSort<std::deque<int> >(deqCopy, 1);
 	clock_t endDeq = clock();
@@ -62,4 +62,5 @@ void PmergeMe::sortAndMeasure(std::vector<int>& vec, std::deque<int>& deq) {
 	printSequence("After: ", vecCopy);
 	std::cout << "Time to process a range of " << vec.size() << " elements with std::vector: " << ORANGE << vecDuration << " µs" << NC << std::endl;
 	std::cout << "Time to process a range of " << deq.size() << " elements with std::deque: " << ORANGE << deqDuration << " µs" << NC << std::endl;
+	std::cout << MAGENTA << "Sorted in: " << comparisonNumber << " comparisons" << NC << std::endl;
 }
