@@ -37,6 +37,7 @@ The 42 CPP Modules are a set of progressively challenging projects designed to t
 - Function overloading
 - Operator overloading (+, -, <<, etc.)
 - Fixed-point numbers representation
+
 🔧 **Key Skills:**
 - Creating user-friendly classes
 - Implementing efficient mathematical operations
@@ -46,6 +47,7 @@ The 42 CPP Modules are a set of progressively challenging projects designed to t
 - Classical inheritance (public, protected, private)
 - Base and derived class relationships
 - Virtual destructors
+
 🔧 **Key Skills:**
 - Understanding class hierarchies
 - Avoiding memory leaks in polymorphic structures
@@ -55,6 +57,7 @@ The 42 CPP Modules are a set of progressively challenging projects designed to t
 - Abstract classes and pure virtual functions
 - Polymorphism with virtual methods
 - Interfaces in C++
+
 🔧 **Key Skills:**
 - Using base class pointers for dynamic behavior
 - Implementing polymorphic behavior through inheritance
@@ -64,6 +67,7 @@ The 42 CPP Modules are a set of progressively challenging projects designed to t
 - try, catch, throw
 - Standard exception classes
 - Custom exceptions
+
 🔧 **Key Skills:**
 - Writing robust error-handling mechanisms
 - Understanding RAII (Resource Acquisition Is Initialization)
@@ -72,6 +76,7 @@ The 42 CPP Modules are a set of progressively challenging projects designed to t
 ✅ **Topics:**
 - static_cast, dynamic_cast, reinterpret_cast, const_cast
 - Safe and unsafe type conversions
+
 🔧 **Key Skills:**
 - Understanding type safety in C++
 - Avoiding undefined behavior in type conversions
@@ -81,6 +86,7 @@ The 42 CPP Modules are a set of progressively challenging projects designed to t
 - Function and class templates
 - Template specialization
 - Und*erstanding *compilation-time polymorphism
+
 🔧 **Key Skills:**
 - Writing generic, reusable code
 - Understanding the trade-offs of template instantiation
@@ -90,6 +96,7 @@ The 42 CPP Modules are a set of progressively challenging projects designed to t
 - Standard Template Library (STL)
 - std::vector, std::stack, std::map
 - Algorithmic complexity and efficiency
+
 🔧 **Key Skills:**
 - Choosing the right data structure for a problem
 - Optimizing performance with STL algorithms
@@ -98,6 +105,7 @@ The 42 CPP Modules are a set of progressively challenging projects designed to t
 ✅ **Topics:**
 - Implementing a container (similar to STL)
 - Performance optimization
+
 🔧 **Key Skills:**
 - Understanding how STL containers work internally
 - Optimizing memory management
