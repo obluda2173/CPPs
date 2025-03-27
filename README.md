@@ -85,7 +85,7 @@ The 42 CPP Modules are a set of progressively challenging projects designed to t
 ✅ **Topics:**
 - Function and class templates
 - Template specialization
-- Und*erstanding *compilation-time polymorphism
+- Understanding compilation-time polymorphism
 
 🔧 **Key Skills:**
 - Writing generic, reusable code
