@@ -6,12 +6,13 @@
 /*   By: erian <erian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 18:54:47 by erian             #+#    #+#             */
-/*   Updated: 2025/02/18 16:19:53 by erian            ###   ########.fr       */
+/*   Updated: 2025/03/27 12:29:44 by erian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
+// if you are inspiring from my code, then I have to inform you that this exercise implementation is not correct
 Level get_level(const std::string& level_str) {
     if (level_str == "DEBUG") return DEBUG;
     if (level_str == "INFO") return INFO;

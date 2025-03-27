@@ -101,14 +101,17 @@ The 42 CPP Modules are a set of progressively challenging projects designed to t
 - Choosing the right data structure for a problem
 - Optimizing performance with STL algorithms
 
-### 📌 CPP Module 09 - Custom Containers (Optional)
+### 📌 CPP Module 09 - Custom Containers (hardest CPP module)
 ✅ **Topics:**
-- Implementing a container (similar to STL)
+- Getting more familiar with all STL containers
 - Performance optimization
+- Merge Insertion Sort
 
 🔧 **Key Skills:**
 - Understanding how STL containers work internally
 - Optimizing memory management
+- Shitty algorithm implimentation (shitty not implementation, but a sorting algorithm itself)
+
 
 ## Peronal advice
 > GL peers ;)
